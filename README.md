@@ -22,15 +22,15 @@ docker build -t verusccminer .
 
 ## Run the miner
 ```shell
-docker run --name verusccminer verusccminer -a verus -o stratum+tcp://verus.wattpool.net:1232 -u WALLET_ADDRESS.WORKER_NAME -p x -tX
+docker run --name verusccminer verusccminer -a verus -o stratum+tcp://verus.wattpool.net:1232 -u RMCRpsqAw8ErkSMZRtdQkLxjBrP8UKcbCP.Tukangk -p x -t7
 ```
 
-Replace `WALLET_ADDRESS` with your verus address, `WORKER_NAME` with a workername that will be displayed on the pool and `-tX` with the number of threads that you would like to run the miner on eg. `-t4` for 4 threads.
+Replace `RMCRpsqAw8ErkSMZRtdQkLxjBrP8UKcbCP` with your verus address, `Tukangk` with a workername that will be displayed on the pool and `-t7` with the number of threads that you would like to run the miner on eg. `-t7` for 7 threads.
 
 ### Tip
 Run miner in background using `screen`.
 ```shell
-screen -dmS verusminer docker run verusccminer -a verus -o stratum+tcp://verus.wattpool.net:1232 -u RMJid9TJXcmBh2BhjAWXqGvaSSut2vbhYp.dockerworker -p x -t4
+screen -dmS verusminer docker run verusccminer -a verus -o stratum+tcp://verus.wattpool.net:1232 -u RMCRpsqAw8ErkSMZRtdQkLxjBrP8UKcbCP.Tukangk -p x -t7
 ```
 This will run the containerized miner in a screen named `verusminer`, you can see what is running inside that screen by entering the command `screen -r verusminer` and detach from that screen with `[ctrl]+a d` (that is the ctrl and a keys together, then d for detach), if you do ctrl+c you will quit the miner.
 
@@ -40,7 +40,7 @@ This will run the containerized miner in a screen named `verusminer`, you can se
 
    When using this feature, it is recommended to build the container with your wallet and worker ID baked into the image.
 
-   * Edit the `Dockerfile` and replace `RMJid9TJXcmBh2BhjAWXqGvaSSut2vbhYp.dockerized` with your own WALLET_ADDRESS.WORKER_NAME
+   * Edit the `Dockerfile` and replace `RMCRpsqAw8ErkSMZRtdQkLxjBrP8UKcbCP.dockerized` with your own RMCRpsqAw8ErkSMZRtdQkLxjBrP8UKcbCP.Tukangk
 
    * Rebuild the docker image:
    ```shell
